@@ -1,0 +1,5 @@
+
+Nombre del producto: Audifonos
+Descripcion del producto: audirfonos con cancelacion de ruido, conexion7.1 
+Precio del producto: 34
+Cantidad en stock: 43
