@@ -1,0 +1,15 @@
+
+Nombre del producto: Navaja
+Descripcion del producto: navaja suiza
+Precio del producto: 345
+Cantidad en stock: 23
+
+Nombre del producto: Iphone
+Descripcion del producto: telefdono inteligente copnm 64 gb de almacenamiento
+Precio del producto $23,000.00 
+Cantidad en stock: 23
+
+Nombre del producto: agua
+Descripcion del producto: agua embotellada 100% purificada
+Precio del producto $23.00 
+Cantidad en stock: 4500

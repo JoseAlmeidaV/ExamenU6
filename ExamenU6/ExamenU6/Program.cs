@@ -27,6 +27,8 @@ namespace ExamenU6
             public void Resultados() // metodo para desplegar los resultados en pantalla 
             {
                 Console.WriteLine("*****INVENTARIO DE AMAZON*****");
+                Console.WriteLine();
+                Console.WriteLine("^^Producto agregado^^");
                 Console.WriteLine("Nombre del Producto: " + nombre);
                 Console.WriteLine("Descripcion del producto: " + descripcion);
                 Console.WriteLine("precio del producto: " + precio);
@@ -42,38 +44,54 @@ namespace ExamenU6
             int resp;
 
 
-            StreamWriter sw = new StreamWriter("productos.txt");
+            StreamWriter sw = new StreamWriter("productos.txt", true);
             Console.WriteLine("****indique la opcion que desee (Coloque el numero)**** ");
             Console.WriteLine("1- Agregar producto");
             Console.WriteLine("2- Salir del programa");
             resp = int.Parse(Console.ReadLine());
             Console.Clear();
 
-            while (resp !=2)
+            try
             {
-                Console.WriteLine("****Binvenido al registro de investario de Amazon****");
-                Console.WriteLine();
-                Console.Write("Coloque el nombre del producto: ");
-                nombre = Console.ReadLine();
-                Console.Write("Coloque la descripcion del producto: ");
-                descripcion = Console.ReadLine();
-                Console.Write("Coloque el precio del prodcuto: ");
-                precio = float.Parse(Console.ReadLine());
-                Console.Write("Coloque la cantidad en Stock: ");
-                cantidadStock = int.Parse(Console.ReadLine());
-                Console.Clear();
-                Console.WriteLine("Si desea continuar agragandoi productos precione 1, de lo contrario presione 2");
-                resp = int.Parse(Console.ReadLine());
+                while (resp != 2)
+                {
+                    Console.WriteLine("****Binvenido al registro de investario de Amazon****");
+                    Console.WriteLine();
+                    Console.Write("Coloque el nombre del producto: ");
+                    nombre = Console.ReadLine();
+                    Console.Write("Coloque la descripcion del producto: ");
+                    descripcion = Console.ReadLine();
+                    Console.Write("Coloque el precio del prodcuto: ");
+                    precio = float.Parse(Console.ReadLine());
+                    Console.Write("Coloque la cantidad en Stock: ");
+                    cantidadStock = int.Parse(Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine("Si desea continuar agragandoi productos precione 1, de lo contrario presione 2");
+                    resp = int.Parse(Console.ReadLine());
+                    Console.Clear();
 
-                 sw.WriteLine();
-                sw.WriteLine("Nombre del producto: " + nombre);
-                sw.WriteLine("Descripcion del producto: " + descripcion);
-                sw.WriteLine("Precio del producto: " + precio);
-                sw.WriteLine("Cantidad en stock: " + cantidadStock);
+                    sw.WriteLine();
+                    sw.WriteLine("Nombre del producto: " + nombre);
+                    sw.WriteLine("Descripcion del producto: " + descripcion);
+                    sw.WriteLine("Precio del producto {0:c} " , precio);
+                    sw.WriteLine("Cantidad en stock: " + cantidadStock);
 
-                 Amazon A1 = new Amazon(nombre, descripcion, precio, cantidadStock);
-                 A1.Resultados();
+                    Amazon A1 = new Amazon(nombre, descripcion, precio, cantidadStock);
+                    A1.Resultados();
+                    Console.WriteLine();
+                    Console.WriteLine("Presione Enter para continuar...");
+                    Console.ReadKey();
+                    Console.Clear();
 
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
 
             }
             Console.WriteLine("Gracias por utilizar nuestro servicio de inventario, Amazon se lo agradece !!!!!");
