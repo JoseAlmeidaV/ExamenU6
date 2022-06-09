@@ -29,10 +29,12 @@ namespace ExamenU6
                 Console.WriteLine("*****INVENTARIO DE AMAZON*****");
                 Console.WriteLine();
                 Console.WriteLine("^^Producto agregado^^");
+                Console.WriteLine();
                 Console.WriteLine("Nombre del Producto: " + nombre);
                 Console.WriteLine("Descripcion del producto: " + descripcion);
                 Console.WriteLine("precio del producto: " + precio);
                 Console.WriteLine("Cantidad en stock: " + cantidadStock);
+                Console.WriteLine();
             }
         }
         static void Main(string[] args)
